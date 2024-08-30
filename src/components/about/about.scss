@@ -1,0 +1,66 @@
+$primary-color: #ffcc00; // Accent color
+
+$text-light: #ffffff;
+$text-muted: #b0b0b0;
+$highlight: #a0a0ff;
+
+.about-section {
+  padding: 4rem 2rem;
+  background-color:linear-gradient(180deg, #111132, #0c0c1d);
+  
+  color: $text-light;
+  line-height: 1.6;
+
+  .section-header {
+    margin-bottom: 1.5rem;
+    h2 {
+      font-size: 2rem;
+      color: $primary-color;
+      position: relative;
+      &:after {
+        content: '';
+        display: block;
+        width: 50px;
+        height: 4px;
+        background-color: $highlight;
+        margin-top: 8px;
+      }
+    }
+  }
+
+  .summary, .content {
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+    background: rgba(0, 0, 0, 0.2);
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    &:hover {
+      background:rebeccapurple;;
+    }
+  }
+}
+
+// Mobile responsiveness
+@mixin mobile {
+  @media (max-width: 768px) {
+    @content;
+  }
+}
+
+@include mobile {
+  .about-section {
+    padding: 2rem 1rem;
+
+    .section-header {
+      h2 {
+        font-size: 1.5rem;
+      }
+    }
+
+    .summary, .content {
+      font-size: 1rem;
+    }
+  }
+}
+

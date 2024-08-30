@@ -1,0 +1,113 @@
+@import "../../app.scss";
+
+
+.navbar {
+  height: 100px;
+
+  .wrapper {
+    max-width: 1366px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%;
+
+   
+
+    span {
+      font-weight: bold;
+
+      @include mobile {
+        
+      }
+    }
+
+    .social {
+      display: flex;
+      justify-content: space-around;
+      gap: 20px;
+      @include mobile {
+        
+        align-items: center;
+      }
+
+
+      img {
+        width: 25px;
+        height: 25px;
+        
+      }
+     
+    }
+
+    .icon-container {
+      position: relative;
+      display: inline-block;
+     
+    }
+    .icon {
+      cursor: pointer;
+      
+      width: 32px;
+      height: 32px;
+     @include mobile {
+      cursor: pointer;
+      width: 28px;
+      height: 28px;
+     }
+    
+    }
+
+
+    .icon-wrapper {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      @include mobile {
+        margin-bottom: 10px;
+      }
+     
+    }
+    .tooltip {
+      visibility: hidden;
+      background-color: linear-gradient(180deg, #111132, #0c0c1d);
+      color: #fff;
+      text-align: center;
+      border-radius: 5px;
+      padding: 5px;
+      position: absolute;
+      z-index: 1;
+      top: 30px;
+      left: 50%;
+      transform: translateX(-50%);
+      white-space: nowrap;
+      opacity: 0;
+      transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out, transform 0.3s ease-in-out;
+      @include mobile {
+        top: 25px;
+        font-size: 12px;
+      }
+      
+    
+    }
+    
+    .icon-wrapper:hover  .tooltip {
+     visibility: visible;
+     opacity: 1;
+     transform: translateX(-50%) translateY(0);
+    
+
+  }
+  
+  @include mobile {
+    .icon-wrapper:active .tooltip, 
+    .icon-wrapper:focus .tooltip{
+        visibility: visible;
+        opacity: 1;
+        transform: translateX(-50%) translateY(0);
+    
+      } 
+    }
+}
+}
